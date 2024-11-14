@@ -1,9 +1,16 @@
 const http = require('http');
 
+let todo = [];
+
 // 서버 만들기
 const server = http.createServer((req, res) => {
-  res.setHeader('Content-Type', 'text/plain; charset=utf-8'); // 한국어 인코딩 설정
-  res.end('안녕하세요!');
+  console.log(req.method + '요청이 들어왔어요!');
+
+  // CORS 설정
+  res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
+  res.setHeader('Access-Control-Allow-Methods', 'GET');
+
+  res.end('end!');
 });
 
 // 서버 실행
