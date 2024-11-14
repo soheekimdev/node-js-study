@@ -27,6 +27,9 @@ const readTodo = async () => {
 const updateTodo = (newTodo) => {
   return fetch(BASE_URL, {
     method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify(newTodo),
   })
     .then((res) => res.text())
